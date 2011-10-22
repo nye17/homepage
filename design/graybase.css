@@ -1,0 +1,132 @@
+h1 {
+color : #808080;
+font-size : 14pt;
+font-family : verdana, helvetica;
+}
+
+h2 {
+color : #808080;
+font-size : 12pt;
+font-family : verdana, helvetica}
+
+h3 {
+color : #404040;
+font-size : 11pt;
+font-family : times, Times New Roman, times-roman, georgia, serif;}
+
+h4 {
+color : #808080;
+font-size : 10pt;
+font-family : verdana, helvetica;
+margin : 0px;
+}
+
+/*indented block quotes*/
+blockquote {
+font-size : 11pt;
+color : #404040;
+font-family : helvetica, tahoma, verdana;
+}
+
+/*code snippet*/
+pre {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    background: #f0f0f0;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    line-height: 20px; /*--Height of each line of code--*/
+    background: url(pre_code_bg.gif) repeat-y left top; /*--Background of lined paper--*/
+    width: 900px;
+    overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+    overflow-y: hidden;  /*--Hides vertical scroll created by IE--*/
+}
+
+pre code {
+    margin: 0 0 0 40px;  /*--Left Margin--*/
+    padding: 18px 0;
+    display: block;
+}
+
+/*links*/
+a:link {
+    color:#327A92;
+    text-decoration : none;
+    background:transparent;
+}
+a:visited {
+    color: #9D9D6C;
+    text-decoration: none;
+    background: transparent;
+}
+a:hover {
+    color: #D4A21A; 
+    text-decoration : none;
+    background: #E0E0CF;
+}
+a:active {
+    color:gray;
+    text-decoration : none;
+    background: transparent;
+}
+
+
+/*html main contents*/
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: white;
+    border: none;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100%;
+    background-color: white;
+    border: none;
+}
+
+table {
+    height: 100%;
+}
+
+font {
+    color : #808080;
+    font-size : 8pt;
+    font-family : verdana, helvetica;
+}
+
+
+.heading {
+    color : #808080;
+    font-size : 28pt;
+    font-family : verdana, helvetica;
+}
+
+/*.line { margin-top: -21px; */
+/*    margin-left: 0px; */
+/*    margin-right: 0px; */
+/*    margin-bottom: 0px;*/
+/*}*/
+
+.bottom {
+    background : #e0e0cf;
+}
+
+.more {
+    display: none;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666; }
+a.showLink, a.hideLink {
+    text-decoration: none;
+    color: #36f;
+    padding-left: 8px;
+    background: transparent url('down.gif') no-repeat left; }
+a.hideLink {
+    background: transparent url('up.gif') no-repeat left; }
+a.showLink:hover, a.hideLink:hover {
+    border-bottom: 1px dotted #36f; }
+

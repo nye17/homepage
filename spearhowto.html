@@ -1,0 +1,513 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="design/graybase.css"><title>SPEAR: a new approach to reverberation mapping</title></head>
+
+    <body><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+            <tr>
+                <td height="75%" valign="top">
+                    <img src="design/blank.gif" alt="" border="0" height="25" width="1">
+                    <center>
+                        <table border="0" cellpadding="0" cellspacing="0" width="94%">
+                            <tbody>
+                                <tr>
+                                    <td> 
+                                        <center><font style="font-family: Times New Roman;" class="heading"><a href="spear.html">SPEAR</a>
+                                                HOWTO</font><br><br></center>
+                                        <img src="design/blank.gif" alt="" border="0" height="13" width="1"><br>
+                                    </td>
+                                </tr>
+                                <tr> 
+                                    <td>
+                                        <center>
+                                            <span style="color:red"><b>S</b></span>tochastic 
+                                            <span style="color:red"><b>P</b></span>rocess 
+                                            <span style="color:red"><b>E</b></span>stimation for
+                                            <span style="color:red"><b>A</b></span>GN
+                                            <span style="color:red"><b>R</b></span>everberations
+                                        </center>
+                                    </td> 
+                                </tr>
+
+                                <tr>
+                                    <td> 
+                                        <img src="design/dot.gif" alt="" class="line" border="0" height="1" width="100%">
+                                        <br><img src="design/blank.gif" alt="" border="0" height="30" width="1"><br>
+                                        <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Getting ready</span>
+                                        <blockquote>
+                                            Here we briefly explain how to use SPEAR to caculate the line lags for the AGN hosted by an imaginary  
+                                            <a href="http://www.mariowiki.com/Loopdeeloop_Galaxy"> Loopdeloop galaxy</a>.
+                                            Every file and script referred to here can be found inside the code package.<br><br>
+                                            We strongly suggest that you read the <a href="http://arxiv.org/abs/1008.0641">paper</a> before using the code.
+                                            Essentially all the steps and visualizations are presented inside the paper. Also please read the README file
+                                            supplied with the code. This HOWTO assumes that you have already read both the paper and the README file.  
+                                        </blockquote>
+
+                                        <img src="design/dot.gif" alt="" class="line" border="0" height="1" width="100%"><br>
+                                        <img src="design/blank.gif" alt="" border="0" height="30" width="1"><br>
+                                        <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Compilation Prerequisites</span>
+
+                                        <blockquote>
+
+                                            SPEAR relies on <a href=http://www.netlib.org/lapack/>LAPACK</a> and <a href=http://www.netlib.org/blas/>BLAS</a> to solve systems
+                                            of linear equations. It requires no extra effort to install them as many systems either come with LAPACK and BLAS pre-installed
+                                            (MAC), or have them conveniently in software repositaries (Linux distributions). LAPACK and BLAS are usually bundled with each
+                                            other, and like BLAS it has spawned many different variants as well, especially 
+                                            <a href=http://math-atlas.sourceforge.net/>ATLAS</a> if you want your SPEAR to be multithreading in a multi-core environment.
+                                            
+                                            <br><br> 
+
+                                            For more information about LAPACK/BLAS and ATLAS, please read <a href=http://www.netlib.org/lapack/faq.html>LAPACK FAQ</a> and
+                                            <a href=http://math-atlas.sourceforge.net/faq.html>ATLAS FAQ</a>.
+
+                                            <br><br>
+
+                                            The code is written in Fortran 90. To compile, please make sure you have a valid fortran compiler in your system, then edit the
+                                            "Compilation options" section in the "Makefile", specifically,
+
+                                            <br><br>
+
+                                            <pre><code>
+# @file  Makefile
+# Compilation Options
+F90     = ifort      # Your favorate Fortran compiler, e.g., gfortran and ifort, etc
+LIBDIR  = pathtolib  # Path to your LAPACK/BLAS/ATLAS libraries, e.g., /usr/lib/atlas-base/
+BINDIR = $(HOME)/bin # Place where you want to put the spear executable file,
+                     # please make sure it is in your system PATH, e.g., ~/bin
+                                            </code></pre>
+
+
+                                        </blockquote>
+
+                                        <img src="design/dot.gif" alt="" class="line" border="0" height="1" width="100%"><br>
+                                        <img src="design/blank.gif" alt="" border="0" height="30" width="1"><br>
+                                        <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Prepare the data and input files</span>
+
+                                        <blockquote>
+
+
+                                            After modifying the "Makefile", you can type
+                                            "make" in your favorate terminal to get the executable file "spear".
+                                            
+                                            <br><br>
+
+                                            SPEAR requires a specific format for the light curve data file. You can find example data files
+                                            "lc_loopdeloop_*.dat" in the "loopdeloop/single" and "loopdeloop/tophat_h*" directories. Imagine you want to
+                                            fit two light curves, the first one should always be the continuum light curves and the second one be the line
+                                            light curve. If the continuum light curve has 5 data points while the line light curve has 4, the data file should
+                                            be like (texts after # are comments, not part of the file)
+
+                                            <br><br>
+
+                                            <pre><code>
+2                           # number of light curves, continuum first
+5                           # number of data points in the first light curve
+    8461.5  22.48    0.36   # each light curve entry consists of "Date", "Flux", and  "Flux_Uncertainty"
+    8490.6  20.30    0.30
+    8520.3  19.59    0.56
+    8545.8  20.11    0.15
+    8769.6  21.12    1.20
+4                           # number of data points in the second light curve
+    8545.8   9.82    0.23
+    8890.4  11.86    0.58
+    8949.4  10.55    0.87
+    8988.6  11.06    0.27
+                                            </code></pre>
+
+                                            <br><br>
+
+                                            You can either tweak the code for your own format or generate it with the perl script "GenLC.pl" . If you enter "loopdeloop"
+                                            directory, there are three separate 3-column light curve files "loopdeloop_con.dat", "loopdeloop_ha.dat", and "loopdeloop_hb.dat",
+                                            run:
+                                            
+                                            <br><br> 
+
+                                            <pre><code>
+[yingzu@loopdeloop]$ GenLC.pl 
+USAGE: gen_lc.pl OBJECT NCURVE NAME_LINE01 [NAME_LINE02] ...
+
+[yingzu@loopdeloop]$ GenLC.pl loopdeloop 1 con
+******************************
+Object: loopdeloop 
+# of Lines: 1 
+Names: con
+OUTPUT: lc_loopdeloop_con.dat
+******************************
+Opening: loopdeloop_con.dat
+number of data points in cont: 36
+DONE.
+                                            </code></pre> 
+                                            
+                                            <br><br>
+
+                                            which will generate "lc_loopdeloop_con.dat" that works
+                                            with the code in convolution mode "single", you can then copy this file to the "single" directory.
+                                            <pre><code>
+[yingzu@loopdeloop]$ cp lc_loopdeloop_con.dat ./single/
+                                            </code></pre> 
+                                            
+                                            <br><br>
+                                               
+                                            The example input files can be found as "input.*" files under "loopdeloop/single" and "loopdeloop/tophat_h*".
+                                            If you feed the input by STDIN, the program will
+                                            prompt you whenever an input is needed. Generally it asks for the light curve
+                                            data file, the convmode, the initial parameters, which of them are to be fixed
+                                            during fitting, whether you want the outputs of simulated light curves ("error
+                                            snakes"), whether you want to do MCMC run, and if so, where do you want to
+                                            save the MCMC output.
+                                            
+                                            <br><br>
+
+                                            We implemented 6 convolution modes in the main code, and we refer to them in the code as
+                                            
+                                            <br><br>
+
+                                            <pre><code>
+0 DELTAFUNC    = use a delta function as transfer function, expect 2 light curves
+1 TOPHAT       = use a tophat function as transfer function, expect 2 light curves
+2 SINGLE       = model a single unsmoothed light curve, for modeling continuum line curve only
+3 PHOTOECHO    = model two broad band photometric light curves
+4 DOUBLETOPHAT = use multiple tophats for different emission lines or velocity bins, expect 3 or more light curves
+5 BERET        = use luminosity dependent transfer function, expect 2 light curves
+                                            </code></pre>
+   
+                                        </blockquote>
+
+                                        <img src="design/dot.gif" alt="" class="line" border="0" height="1" width="100%">
+                                        <br><img src="design/blank.gif" alt="" border="0" height="30" width="1"><br>
+                                        <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Continuum Fitting</span>
+                                        <blockquote>
+
+                                            The first step is to model the continuum light curve alone to determine the prior on tau and sigma. Enter the
+                                            "single" directory, and run:
+                                            
+                                            <br><br>
+
+                                            <pre><code>
+[yingzu@loopdeloop]$ cd ./single/
+[yingzu@single]$ vi input.single
+lc_loopdeloop_con.dat                                                   
+2                                        # single mode                                                           
+0.794328234724282 25.1188643150958       # \hat{\sigma} \tau                               
+1 1                                      # vary everything                               
+1                                        # run ameoba                              
+1                                        # run prediction                               
+1                                        # run MCMC
+mcmc_con.dat
+[yingzu@single]$ spear < input.single
+                                            </code></pre>
+                                            
+                                            <br><br>
+
+                                            here we assume the executable "spear" always exists in the system variable `$PATH`. The output files are:
+                                            
+                                            <br><br>
+
+                                            <pre><code>
+[yingzu@single]$ ls 
+best3.new  fort.13  fort.25  mcmc_con.dat
+                                            </code></pre>
+                                            
+                                            <br><br>
+
+                                            where "best3.new" contains the best-fit parameters from ameoba, "mcmc_con.dat" is the output from an MCMC chain,
+                                            "fort.13" are the predicted continuum light curve at unmesured time, and "fort.25" records
+                                            accepted MCMC steps before "burn-in" for the test of mixing and convergence. The "unmeasured time" light curve
+                                            simply samples the period covered by the data at 10 times the mean temporal resolution.
+                                            
+                                            <br><br>
+
+                                            From the MCMC output, we can get the prior required for the fitting of lines:
+                                            
+                                            <br><br>
+
+                                            <pre><code>[yingzu@loopdeloop]$ FindCL.pl -s mcmc_con.dat -t stats.dat</code></pre>
+                                            
+                                            <br><br>
+
+                                            The output "stats.dat" will be needed for the combined fitting of continuum and lines.  It has only one line with 6 numbers as
+                                            follows,
+
+                                            <br><br>
+
+                                            <pre><code>Log10(Tau) Log10(Tau_lo) Log10(Tau_hi) Log10(Sig) Log10(Sig_lo) Log10(Sig_hi)</code></pre>
+
+                                            <br><br>
+
+                                            Log10 means the logarithm to the base 10. "Tau" and "Sig" are the center values of \tau and \hat{sigma}, respectively. subscript
+                                            "lo" and "hi" indicate the lowest and highest values enclosing 68.3% of distribution.
+
+                                            <br><br>
+
+                                            Although the ameoba routine only finds the local maximum of likelihood, it does not matter at this stage, because
+                                            all AGNs occupy a very distinct region in the sigma-tau parameter plane. The MCMC run will quickly converge to
+                                            the best-fit parameter pairs in any case. However, you can always initialize tau with a reasonable initial value
+                                            from its scaling with optical luminosity (see Figure 3 of our paper), or run a grid likelihood calculation to isolate 
+                                            the best-fit parameter pairs as peaks on the grid, which we have implemented in an automated script "SinWrapper.pl":
+                                            
+                                            <pre><code>
+[yingzu@single]$ SinWrapper.pl -h
+usage: SinWrapper.pl -f file [-h -v -w -a -r -p -m rootname -z redshift -s spear -g s1_s2_ds_t1_t2_dt -d grid.dat]
+ -h         : this (help) message
+ -v         : turn on verbose mode for script output, defaut: off
+ -w         : turn on verbose mode for spear output, default: off
+ -a         : show an ASCII plot of the likelihood grid on sigma-tau plane, default: off
+ -f foo.dat           : light curve data (only the continuum)
+ -r rootname          : root name for all the output files, default: null string
+ -z redshift: redshift of the object for converting all time to rest-frame, default: 0
+ -s pathtospear       : path to the spear executable, default: spear
+
+ -g s1_s2_ds_t1_t2_dt : specify your own grid geometry in a '_' concatenated string, default: -3_1_41_0_4_41
+ -d pathtogrid        : use existing grid file without running calculation, default: none
+ -p         : predict hires light curves at the peak, default: off
+ -m         : run a MCMC chain, default: off
+example: SinWrapper.pl -f lc_loopdeloop_con.dat -v -p -m -a
+                                            </code></pre>
+
+                                            <br><br>
+
+                                            Only the [-f] option is required that you have to indicate the continuum light curve data file. By default, "SinWrapper.pl" will do
+                                            a grid likelihood calculation on a tau-sigma plane and identify the most significant peak of likelihood as the input for subsequent
+                                            light curve prediction and MCMC confidence level estiamtion. So if you run:
+
+                                            <br><br>
+
+                                            <pre><code>
+[yingzu@single]$ SinWrapper.pl -f lc_loopdeloop_con.dat -v -p -m -a
+                                            </code></pre>
+
+                                            <br><br>
+
+                                            the code will write a "grid.dat" as the result of grid likelihood calculation, a "hires.dat" as the predicted light curves from the
+                                            best fit parameters recorded in "best3.txt" found by searching the grid , a "mcmc.dat" as the MCMC chain around the peak, and a
+                                            "stats.dat" as prior input for model parameters in lag determination. 
+                                            
+
+
+                                        </blockquote>
+
+                                        <img src="design/dot.gif" alt="" class="line" border="0" height="1" width="100%">
+                                        <br><img src="design/blank.gif" alt="" border="0" height="30" width="1"><br>
+                                        <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Joint Fit of Continuum and Line</span>
+                                        <blockquote>
+
+                                            The lag-likelihood surface frequently has multiple peaks, so simply running a minimization routine ("ameoba" here) may not find the
+                                            global peak likelihood. Assuming it is close to the BLR radius-luminosity relationship could introduce dangerous biases. At
+                                            present, we generate a grid of solutions by repeatedly running the code using a PERL script.
+                                            
+                                            <br><br>
+
+                                            For example, to search for a global maximum of the likelihood function for both lag and width of the Tophat transfer function, we
+                                            can calculate the likelihood on a 2-D grid and run an MCMC around the peak identified from the grid calculation.
+
+                                            <br><br>
+
+                                            The grid calculation can be done with "TopWrapper.pl". Return to the parent directory and generate the light curve file for the
+                                            joint fit of continuum and H-alpha light curves,
+
+                                            <br><br>
+
+                                            <pre><code>
+
+[yingzu@single]$ cd ..
+[yingzu@loopdeloop]$ GenLC.pl loopdeloop 2 con ha
+******************************
+Object: loopdeloop 
+# of Lines: 2 
+Names: con ha
+OUTPUT: lc_loopdeloop_con_ha.dat
+******************************
+Opening: loopdeloop_con.dat
+number of data points in cont: 36
+Opening: loopdeloop_ha.dat
+number of data points in cont: 18
+DONE.
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            Copy "lc_loopdeloop_con_ha.dat" and enter the "tophat_ha" directory, 
+
+                                            <br><br> 
+
+                                            <pre><code>
+[yingzu@loopdeloop]$ cd ./tophat_ha/
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            and try:
+
+                                            <br><br> 
+
+                                            <pre><code>
+[yingzu@tophat_ha]$ TopWrapper.pl -h
+usage: ./TopWrapper.pl -f file [-h -v -w -a -r rootname -s spear -t stats.dat -g t1_t2_dt_w1_w2_dw -p -d grid.dat]
+ -h         : this (help) message
+ -v         : verbose mode for script output
+ -w         : verbose mode for spear output
+ -a         : show an ASCII plot of the grid and peaks found
+ -f foo.dat : light curve data (continuum + line)
+ -r rootname          : root name for all the output files
+ -s pathtospear       : path to the spear executable
+ -t statsfile         : path to the prior file (if other than ./stats.dat 
+                        or ../single/stats.dat)
+
+ -g t1_t2_dt_w1_w2_dw : specify your own grid geometry in a '_' concatenated string
+ -d pathtogrid        : use existing grid file without running calculation
+ -p         : predict hires light curves at the peak
+
+example: ./TopWrapper.pl -f lc_loopdeloop_con_ha.dat -v -a -g 0_50_1_0.01_10.01_1
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            "TopWrapper.pl" does similar things as "SinWrapper.pl". It assumes a TopHat transfer function for the BLR and creates a 
+                                            lag-width grid whose geometry can be set by the "-g" option. After finishing the grid calculation, it uses a Coonnected 
+                                            Component Labeling algothrim to identify isolated peaks. Unlike "SinWrapper.pl", it try to identify multiple, isolated solutions
+                                            because there could be multiple solutions of similar significance thus need to be kept for further analysis. For the H-alpha line of
+                                            Loopdeloop, we have only one solution and you can find it by running,
+
+                                            <br><br> 
+
+                                            <pre><code>
+[yingzu@tophat_ha]$ TopWrapper.pl -f lc_loopdeloop_con_ha.dat -v -a -g 0_50_1_0.01_10.01_10
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            The "-g 0_50_1_0.01_10.01_1" indicates the geometry of the 2-d grid (concatenated by "_" to avoid perl parse error), corresponding
+                                            to 
+
+                                            <br><br> 
+
+                                            <pre><code>
+lagmin lagmax lagstep widmin widmax widstep
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            where "lagmin" and "lagmax" give the range of possible lags, which usually start from 0 and run to around 2/3 of the
+                                            length of the light curves, while "widmin" and "widmax" give the range of transfer function width, starting from
+                                            small values (but above 0) to no more than 15 days. "lagstep" and "widstep" indicate the step size of the grid in
+                                            two axes. You can choose their values according to the limit on your computational
+                                            resources, and what resolution you need to resolve each peak in your lag likelihood distribution
+                                            function.
+                                            
+                                            <br><br>
+
+                                            Note that you also need "stats.dat" file generated by the continuum fitting and  put
+                                            it in either current directory or "../single" for the joint fit to work, or assign the postion by using "-t" option.
+
+                                            The most important output of "TopWrapper.pl" is "rootname.peaks.grid" (rootname is set by using "-r" option), which records
+                                            the information of all the solutions found by the grid calculation, with formats like,
+
+                                            <br><br> 
+
+                                            <pre><code>
+logL lag width sigma tau scale
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            where "logL" is the log likelihood value of this solution of "lag" + "width", "sigma tau" are the best fit parameters for
+                                            the model parameters \hat{\sigma} and \tau, and "scale" is a nuisance parameter.
+
+                                            Once you finish the grid calculation and find out there is only one peak spitted out, then you can eye-ball check whether this
+                                            solution is an artefact (could be a false peak induced by a large grid, or could be the light curve is too noisy that SPEAR favors
+                                            a extreme long width transfer function to smear out variabilities). If everything seems all right, congratulations, you can run
+                                            another MCMC around this peak to get the confidence limits on your lag estimation,
+
+                                            <br><br> 
+
+                                            <pre><code>
+[yingzu@tophat_ha]$ vi input.tophat.mcmc
+lc_loopdeloop_con_ha.dat
+1                                        # tophat mode                                                           
+0.838097 34.480781 15 0.607393 1.001     # directly from "*.peaks.grid"                               
+1 1 1 1 1                                # vary all 5 parameters                             
+0 do amoeba                              # no ameoba
+0 predict light curves                   # no prediction                             
+1 do mcmc                                # run MCMC
+mcmc_ha.dat
+
+[yingzu@tophat_ha]$ spear < input.tophat.mcmc
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            Run "FindCL.pl" on the MCMC output "mcmc_ha.dat" ("-c 9" as the 9th column is the lag, please refer to the source code for the
+                                            column keys), 
+
+                                            <br><br> 
+
+                                            <pre><code>
+[yingzu@tophat_ha]$ FindCL.pl -m mcmc_ha.dat -c 9
+Using column: 9
+CL:     14.400810     13.575960     15.229258
+                                            </code></pre>
+
+                                            <br><br> 
+
+                                            thus the H-alpha lag estimate is 14.4 days, with 1-sigma range [13.57 days - 15.23 days].
+
+
+
+                                        </blockquote>
+
+                                        <img src="design/dot.gif" alt="" class="line" border="0" height="1" width="100%">
+                                        <br><img src="design/blank.gif" alt="" border="0" height="30" width="1"><br>
+                                        <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Joint Fit of Continuum and Two Lines</span>
+                                        <blockquote>
+
+                                            What if two or more peaks are found after the joint fit? You have to resort to a third light curve, or pray for better light curves
+                                            to come. If you apply the above procedures to the H-beta line in the same directory, you will find two H-beta lag solutions of the
+                                            similar significance. Nonetheless we know from above that the H-alpha lag estimation has only a single solution, thus we can gain
+                                            extra constraining power by fitting the H-beat line together with H-alpha line as if the H-alpha light curve is a lagged and
+                                            smoothed version of the underlying continuum with different sampling epoches as the "true" one.
+                                            
+                                            <br><br>
+
+                                            Examples for DOUBLETOPHAT mode and BERET mode will be added soon.
+
+                                            <br><br>
+
+                                        </blockquote>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </center>
+                </td>
+            </tr>
+
+<!--            bottom panel-->
+            <tr class="bottom">
+                <td align="center" height="25%" valign="top"> <img src="design/blank.gif" alt="" border="0" height="20" width="1"> 
+                    <font><b>
+                            [ <a href="index.html">home</a>     ] 
+                            [ <a href="news.html">news</a>     ] 
+                            [ <a href="research.html">research</a>     ] 
+                            [ <a href="personal.html">personal</a> ] 
+                            [ <a href="contact.html">contact</a>  ]
+                    </b></font>
+                    <br>
+                    <br>
+                    <small><span style="color: rgb(102, 102, 102); font-family: monospace;"> Page last updated on: 04/08/2010
+                            </span></small>
+                    <br>
+                    <!-- Begin Motigo Webstats counter code -->
+                    <a id="mws4771743" href="http://webstats.motigo.com/">
+                        <img width="0" height="0" border="0" alt="Free counter and web stats"
+                        src="http://m1.webstats.motigo.com/n80x15.gif?id=AEjPnwcpVI51ZNAoeeVhI2mvApjA" /></a>
+                    <script src="http://m1.webstats.motigo.com/c.js?id=4771743&amp;lang=EN&amp;i=3" type="text/javascript"></script>
+                    <!-- End Motigo Webstats counter code -->
+
+                </td>
+            </tr>
+        </tbody>
+    </table></body>
+</html>
