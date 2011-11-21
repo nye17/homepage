@@ -1,0 +1,91 @@
+@import url('reset-min.css');
+@import url('graybase.css');
+
+nav :link, nav :visited {
+  display:block;
+  color:#555;
+  background:#e0e0cf;
+  text-decoration:none;
+  text-shadow:0 1px 0 rgba(255,255,255,.65)}
+
+nav :focus {
+  outline:none}
+
+nav > ul {
+  font:.7em "lucida grande", "lucida sans", "luxi sans", "lucida sans unicode", arial, sans-serif;
+  overflow:hidden;
+  background:#e0e0cf;
+  background:-moz-linear-gradient(#f5f5f5, #e0e0cf);
+  background:-webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    color-stop(0, #e0e0cf),
+    color-stop(0.98, #e3e3e3),
+    color-stop(1, #fff)
+  );
+  border-bottom:1px solid #ccc}
+
+nav > ul > li {
+  float:left;
+  margin:10px}
+
+nav > ul > li > a, nav h1 {
+  font-weight:700}
+
+nav > ul > li > a:hover, nav > ul > li > a:focus {
+  background:rgba(0,0,0,.1)}
+
+.js_enabled nav a h1:after {
+  content:"\25BC";
+  font-size:6px;
+  margin:-1px 0 0 3px}
+
+.js_enabled nav > ul > li {
+  margin:0}
+
+.js_enabled nav > ul > li > a {
+  position:relative;
+  padding:6px 12px 7px;
+  border-right:1px solid rgba(0,0,0,.12)}
+
+.js_enabled nav > ul > li > a:after {
+  content:"";
+  position:absolute;
+  top:0;
+  right:-2px;
+  width:1px;
+  height:100%;
+  background:rgba(255,255,255,.8)}
+
+.js_enabled nav .subnav {
+  position:absolute;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  border:2px solid #eee;
+  top:32px;
+  z-index:1;
+  background:#fff}
+
+.js_enabled nav .subnav.active {
+  z-index:2}
+
+.js_enabled nav .subnav a {
+  padding:3px 8px 5px}
+
+.js_enabled nav .subnav a:hover, .js_enabled nav .subnav a:focus {
+  background:transparent;
+  color: #d4a21a;
+  }
+
+
+/*floating center text*/
+div {position:relative; font:.85em/1.5 "lucida grande", arial, sans-serif;}
+body > div {float:right; right:50%; width:500px}
+div * {left:50%;}
+
+#content {
+  padding:10% 50px;
+  max-width:800px;
+}

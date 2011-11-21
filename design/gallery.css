@@ -1,0 +1,26 @@
+@import url('simple.css');
+
+/** {padding:0; margin:0;}*/
+
+/*body {background:#222;}*/
+
+img.gallery {vertical-align:middle; border:none;}
+/*img {vertical-align:middle; border:none;}*/
+
+#thumbs {overflow:auto; list-style:none; margin:30px;}
+
+#thumbs li.gallery {float:left;}
+/*#thumbs li {float:left;}*/
+
+#thumbs a, #viewer a {outline:none;}
+
+#thumbs a {display:block; padding:10px;}
+
+#thumbs a:hover, #thumbs a:focus {background:#fff;}
+
+#thumbs a.active {background:#000;}
+
+#viewer {position:relative; width:700px; height:465px; margin-left:30px;}
+
+/*#viewer img[src*="loader"] {position:absolute; left:50%; top:50%; margin:-15px 0 0 -15px;}*/
+#viewer img.gallery[src*="loader"] {position:absolute; left:50%; top:50%; margin:-15px 0 0 -15px;}

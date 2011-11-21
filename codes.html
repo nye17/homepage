@@ -2,8 +2,8 @@
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="design/simple.css"><title>Ying Zu's homepage &gt; About</title>
-<script src=http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js></script>
+<link rel="stylesheet" type="text/css" href="design/simple.css"><title>Ying Zu's homepage &gt; Codes</title>
+<script src=design/jquery.min.js></script>
 <script src=design/scripts.js></script>
 <!--[if lte IE 8]>
   <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
@@ -46,13 +46,52 @@
 <div>
   <div id="content">
     <h3><a name="SPEAR">SPEAR</a></h3><br>
-    <p>
-    tba
+    <p> 
+        <span style="color:red"><b>S</b></span>tochastic
+        <span style="color:red"><b>P</b></span>rocess
+        <span style="color:red"><b>E</b></span>stimation for
+        <span style="color:red"><b>A</b></span>GN
+        <span style="color:red"><b>R</b></span>everberations
+        <img src="design/blank.gif" alt="" border="0" height=10px width=100%>
+        SPEAR is a new approach to reverberation mapping that computes the lags between the AGN continuum
+        and emission line light curves and their statistical confidence limits. It uses a damped random
+        walk model to describe the quasar continuum variability and the ansatz that emission line
+        variability is a scaled, smoothed and displaced version of the continuum. While currently
+        configured only to simultaneously fit light curve means, it includes a general linear parameters
+        formalism to fit more complex trends or calibration offsets. The noise matrix can be modified to
+        allow for correlated errors, and the correlation matrix can be modified to use a different
+        stochastic process. The transfer function model is presently a tophat, but this can be altered
+        by changing the line-continuum covariance matrices. It is also able to cope with some problems in
+        traditional reverberation mapping, such as irregular sampling, correlated errors and seasonal
+        gaps.
+        <img src="design/blank.gif" alt="" border="0" height=10px width=100%>
+        For a thorough description of the underlying statistics and physics, please see  <a
+            href="http://arxiv.org/abs/1008.0641">Zu et al. 2010</a>. A local copy can be obtained  <a
+            href="paper/reverb_zu.pdf">here</a>.<br>
+        For a somewhat more pedagogical derivation of the mathematical formalism than is in the paper, please see <a
+            href="paper/spear_math.pdf">here</a>.<br>
+        For a step-by-step example of how to use SPEAR, please see <span style="color:red"><a
+                href="spearhowto.html"><b>Howto for SPEAR</b></a></span>.<br>
+        For studies using the damped random walk process to model quasar variability, see <a
+            href="http://adsabs.harvard.edu/abs/2009ApJ...698..895K">Kelly et al. 2009</a>,
+        <a href="http://adsabs.harvard.edu/abs/2010ApJ...708..927K">Kozlowski et al. 2010</a>, and
+        <a href="http://adsabs.harvard.edu/abs/2010arXiv1004.0276M">MacLeod et al. 2010</a>.
+        <img src="design/blank.gif" alt="" border="0" height=10px width=100%>
+        The current version (v3.1.2) can be downloaded <a href="code/spear_v3.1.2.tar.gz">here</a>,
+        or you can check out the online repository hosted by bitbucket
+        <a href="https://bitbucket.org/nye17/spear">SPEAR</a>.<br>
+        SPEAR is currently being rewritten in Python.
+        <img src="design/blank.gif" alt="" border="0" height=10px width=100%>
+        You are welcome to use and modify the software, however please acknowledge its use either as is
+        or with modifications  with a citation to:<br>
+        <center>
+        "Zu Y, Kochanek, C.S., & Peterson, B.M. 2010, ApJ, 735, 80"
+        </center>
+
   </div>
   <div id="content">
     <h3><a name="ZyPy">ZyPy</a></h3><br>
-    <p>
-    tba
+    <p> my personal python library, still in testing.
   </div>
 </div>
 </body>

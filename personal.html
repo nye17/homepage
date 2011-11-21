@@ -2,129 +2,59 @@
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="design/graybase.css"><title>Ying Zu's homepage &gt; personal</title></head>
+<link rel="stylesheet" type="text/css" href="design/simple.css"><title>Ying Zu's homepage &gt; Personal</title>
+<script src=design/jquery.min.js></script>
+<script src=design/scripts.js></script>
+<!--[if lte IE 8]>
+  <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
+<![endif]-->    
+</head>
+<body>
 
-<body><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a>
+    <li>
+      <h1>About</h1>
+      <ul class=subnav>
+        <li><a href="about.html#cv">CV</a>
+        <li><a href="about.html#news">News</a>
+        <li><a href="about.html#contact">Contact</a>
+      </ul>
+    <li>
+      <h1>Research</h1>
+      <ul class=subnav>
+        <li><a href="research.html#cosmology">Cosmology</a>
+        <li><a href="research.html#quasar">Quasar</a>
+        <li><a href="research.html#misc">Misc</a>
+      </ul>
+    <li>
+      <h1>Codes</h1>
+      <ul class=subnav>
+        <li><a href="codes.html#spear">SPEAR</a>
+        <li><a href="codes.html#zypy">ZyPy</a>
+      </ul>
+    <li>
+      <h1>Personal</h1>
+      <ul class=subnav>
+        <li><a href="personal.html#gallery">Gallery</a>
+        <li><a href="personal.html#links">Links</a>
+      </ul>
+  </ul>
+</nav>
 
-<tbody>
-<tr>
-<td height="75%" valign="top">
-<!--                    <br><br>-->
-<img src="design/blank.gif" alt="" border="0" height="25" width="1">
-<center>
-<table border="0" cellpadding="0" cellspacing="0" width="94%">
-<tbody>
-<tr>
-<td> 
-<font style="font-family: Times New Roman;" class="heading">PERSONAL</font><br><br>
-<img src="design/blank.gif" alt="" border="0" height="13" width="1"><br>
-</td>
-</tr>
-<tr style="font-family: Courier New;"> 
-<td>
-<span style="color: gray;">You are here :
-<a href="index.html">home</a>
-→ personal</span>
-<img src="design/dot.gif" alt="" class="line" border="0" height="1" width="100%">
-</td> 
-</tr>
-<tr>
-<td> 
-<br>
-<blockquote>
-<span style="font-family: Helvetica; color: gray;">&dagger; Pictures:</span><br>
-<blockquote>
-<span>
-&bull; <a href="nyc_phila.html">2009 年夏末美国东部之行 (NYC and Philladelphia)</a><br>
-</span>
-</blockquote>
+<div>
+  <div id="content">
+    <h3><a name="gallery">Gallery</a></h3><br>
+    <p>Some <a href="nyc_phila.html">pictures</a> taken in 2009 when I visited NYC and Philadelphia. <br>
+  </div>
 
-<br>
-<span style="font-family: Helvetica; color: gray;">&dagger; Bytes</span><br>
-<span>
+  <div id="content">
+    <h3><a name="links">Links</a></h3><br>
+    <p>
+    <a href="tbd">tbd</a>
+  </div>
 
-<blockquote>
-<SCRIPT>
-function passWord() {
-var testV = 1;
-var pass1 = prompt('Please Enter Your Password',' ');
-while (testV < 3) {
-if (!pass1) 
-history.go(-1);
-if (pass1.toLowerCase() == "张三丰") {
-alert('Did you check the source file? alright, I will let you in anyway.');
-window.open('blog/index.html');
-break;
-} 
-testV+=1;
-var pass1 = 
-prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
-}
-if (pass1.toLowerCase()!="password" & testV ==3) 
-history.go(-1);
-return " ";
-} 
-</SCRIPT>
-<!--<CENTER>-->
-<FORM>
-&bull; My weblog (password protected): <input type="button" value="monologue" onClick="passWord()">
-</FORM>
-<!--</CENTER>-->
-
-</span>
-</blockquote>
-
-<blockquote>
-<span>
-&bull; My personal python package: <a href="http://code.google.com/p/zypy/">ZyPy</a><br>
-</span>
-</blockquote>
-
-<blockquote>
-<span>
-&bull; A reverberation mapping tool: <a href="http://code.google.com/p/spear/">SPEAR</a><br>
-</span>
-</blockquote>
-
-
-
-<br>
-<span style="font-family: Helvetica; color: gray;">&dagger; Links:</span><br>
-<blockquote>
-<span>
-&bull; <a href="http://www.astro.ucla.edu/~wright/CosmoCalc.html">Ned Wright's Cosmology Calculator</a><br>
-</span>
-</blockquote>
-<blockquote>
-<span>
-&bull; <a href="http://www.astronomy.ohio-state.edu/Coffee/coffee.html">Morning Coffee</a><br>
-</span>
-</blockquote>
-</blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</center>
-</td>
-</tr>
-
-<!--            bottom panel-->
-<tr class="bottom">
-<td align="center" height="25%" valign="top"> <img src="design/blank.gif" alt="" border="0" height="20" width="1"> 
-<font><b>
-[ <a href="index.html">home</a>     ] 
-[ <a href="news.html">news</a>     ] 
-[ <a href="research.html">research</a> ] 
-[ personal ] 
-[ <a href="contact.html">contact</a>  ]
-</b></font>
-<br>
-<br>
-<small><span style="color: rgb(102, 102, 102); font-family: monospace;">go bucks!</span></small>
-<br>
-</td>
-</tr>
-</tbody>
-</table></body>
+</div>
+</body>
 </html>
