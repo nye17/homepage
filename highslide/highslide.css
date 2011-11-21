@@ -1,4 +1,5 @@
-@import url('../design/graybase.css');
+/*@import url('../design/graybase.css');*/
+@import url('../design/simple.css');
 
 .highslide-container div {
 	font-family: Verdana, Helvetica;

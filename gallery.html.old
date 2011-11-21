@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="highslide/highslide-with-gallery.js"></script>
+    <script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="highslide/highslide.css">
+    <style type="text/css">.highslide img {cursor: url(highslide/graphics/zoomin.cur), pointer !important;}</style>
+    <title>Ying Zu's homepage &gt; Gallery </title>
+</head>
+
+
+<body>
+
+<!--<div id="content">-->
+<div class="highslide-gallery"><ul>
+
+    <li><a href="highslide/images/large/00645.jpg" class="highslide" title="唐人街搭台唱戏 (Chinese Drama Culture Preserved in China Town)"
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00645.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00237.jpg" class="highslide" title="富兰克林雕像 (The Curious Case of Benjamin and Ying)"
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00237.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00334.jpg" class="highslide" title="时代广场众生态 (My Best Shot of NYC)" 
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00334.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00360.jpg" class="highslide" title="布鲁克林大桥 (Brooklyn Bridge)" 
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00360.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00227.jpg" class="highslide" title="宾大胡桃小径 (Painful Walking on Walnut Street)" 
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00227.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00694.jpg" class="highslide" title="驶向自由女神像 (Sail the Albion)" 
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00694.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00690.jpg" class="highslide" title="眺 (Look What We Found!)" onclick="return hs.expand(this, config1
+        )"><img src="highslide/images/thumbs/00690.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00479.jpg" class="highslide" title="虔诚 (Pilgrims)" onclick="return hs.expand(this, config1 )"><img
+        src="highslide/images/thumbs/00479.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00678.jpg" class="highslide" title="一只鸟的落寂 (&amp;quot;I'm tired, you oil-driven
+        bastard!&amp;quot;)" onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00678.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00460.jpg" class="highslide" title="千百个菩萨 (Buddas)" onclick="return hs.expand(this, config1
+        )"><img src="highslide/images/thumbs/00460.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00282.jpg" class="highslide" title="独立大厅 (Independence Hall)" onclick="return hs.expand(this,
+        config1 )"><img src="highslide/images/thumbs/00282.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00630.jpg" class="highslide" title="纽约大学物理系外 (An impromptu lecture at NYU?)" 
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00630.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00436.jpg" class="highslide" title="毛像 (Chairman MAO!)" onclick="return hs.expand(this, config1
+        )"><img src="highslide/images/thumbs/00436.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00551.jpg" class="highslide" title="第五大道 (Japanese Woman at 5TH AVE)" 
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00551.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00776.jpg" class="highslide" title="自由女神 (StatueS of Liberty)" onclick="return hs.expand(this,
+        config1 )"><img src="highslide/images/thumbs/00776.jpg" alt=""></a></li>
+    
+    <li><a href="highslide/images/large/00452.jpg" class="highslide" title="阿弥陀佛 (Eternity and Aging)" onclick="return hs.expand(this,
+        config1 )"><img src="highslide/images/thumbs/00452.jpg" alt=""></a></li>
+
+    <li><a href="highslide/images/large/00661.jpg" class="highslide" title="画像 (Chinese Painter and a Euporean Girl)" 
+        onclick="return hs.expand(this, config1 )"><img src="highslide/images/thumbs/00661.jpg" alt=""></a></li>
+
+    <li> <a href="highslide/images/large/00820.jpg" class="highslide" title="硬币引导人民 (Quarter beats the torch!)" 
+        onclick="return hs.expand(this, config1 )"> <img src="highslide/images/thumbs/00820.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00807.jpg" class="highslide" title="鸥 (Seagull)" onclick="return hs.expand(this, config1 )"> <img
+        src="highslide/images/thumbs/00807.jpg" alt=""> </a></li>
+
+    <li> <a href="highslide/images/large/00428.jpg" class="highslide" title="年轻的画家 (Young Artist)" onclick="return hs.expand(this,
+        config1 )"> <img src="highslide/images/thumbs/00428.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00224.jpg" class="highslide" title="宾州大学物理楼外 (Outside of UPenn Physics Building)"
+        onclick="return hs.expand(this, config1 )"> <img src="highslide/images/thumbs/00224.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00648.jpg" class="highslide" title="马来西亚煲汤馆 (Malaysia Cafe with John Lennon's Lyric)"
+        onclick="return hs.expand(this, config1 )"> <img src="highslide/images/thumbs/00648.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00524.jpg" class="highslide" title="中央公园大道 (Boulevard of Central Park)" 
+        onclick="return hs.expand(this, config1 )"> <img src="highslide/images/thumbs/00524.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00358.jpg" class="highslide" title="布鲁克林大桥吊索 (Brooklyn Bridge)" 
+        onclick="return hs.expand(this, config1 )"> <img src="highslide/images/thumbs/00358.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00266.jpg" class="highslide" title="独立钟外天空 (Sky and Flowers Outside of Independence Bell
+        Exhibit)" onclick="return hs.expand(this, config1 )"> <img src="highslide/images/thumbs/00266.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00370.jpg" class="highslide" title="依靠 (Lean on me)" onclick="return hs.expand(this, config1 )">
+        <img src="highslide/images/thumbs/00370.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00395.jpg" class="highslide" title="偶遇友人 (Friends)" onclick="return hs.expand(this, config1 )">
+        <img src="highslide/images/thumbs/00395.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00317.jpg" class="highslide" title="时代广场 (E Times C Square)" onclick="return hs.expand(this,
+        config1 )"> <img src="highslide/images/thumbs/00317.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00703.jpg" class="highslide" title="驶离纽约 (On Miss Liberty)" onclick="return hs.expand(this,
+        config1 )"> <img src="highslide/images/thumbs/00703.jpg" alt=""> </a> </li>
+
+    <li> <a href="highslide/images/large/00501.jpg" class="highslide" title="阳光打在发梢 (Dancing Sunshine)" onclick="return hs.expand(this,
+        config1 )"> <img src="highslide/images/thumbs/00501.jpg" alt=""> </a> </li>
+
+</ul>
+<div style="clear: both;"></div>
+</div>
+<!--</div>-->
+
+
+
+</body>
+</html>
