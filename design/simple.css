@@ -1,6 +1,9 @@
 @import url('reset-min.css');
 @import url('graybase.css');
 
+/*nav {position:fixed;top:0;width:100%;}*/
+nav {position:fixed;top:0;}
+
 nav :link, nav :visited {
   display:block;
   color:#555;
@@ -10,6 +13,7 @@ nav :link, nav :visited {
 
 nav :focus {
   outline:none}
+
 
 nav > ul {
   font:.7em "lucida grande", "lucida sans", "luxi sans", "lucida sans unicode", arial, sans-serif;
@@ -78,6 +82,9 @@ nav > ul > li > a:hover, nav > ul > li > a:focus {
   background:transparent;
   color: #d4a21a;
   }
+
+
+
 
 
 /*floating center text*/
