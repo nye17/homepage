@@ -2,7 +2,7 @@
 @import url('graybase.css');
 
 /*nav {position:fixed;top:0;width:100%;}*/
-nav {position:fixed;top:0;}
+nav {position:fixed;top:0;z-index:10;}
 
 nav :link, nav :visited {
   display:block;
