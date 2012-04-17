@@ -81,8 +81,8 @@ nav > ul > li > a:hover, nav > ul > li > a:focus {
 
 
 /*floating center text*/
-div {position:relative; font:.85em/1.5 "lucida grande", arial, sans-serif;}
-body > div {float:right; right:50%; width:500px}
+div {position:relative; font:.95em/2.0 "lucida grande", arial, sans-serif;}
+body > div {float:right; right:50%; width:800px}
 div * {left:50%;}
 
 #content {

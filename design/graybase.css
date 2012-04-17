@@ -46,9 +46,7 @@ body code, body pre {
 }
 body .codehilite code, body .codehilite pre {
 /*  position: relative;*/
-/*  width: 150%;*/
-  width: 200%;
-/*  width: 700px;*/
+  width: 100%;
   font-family: Consolas, Menlo, "Courier New", monospace;
   font-size: 12px;
   line-height: 25px;
@@ -57,9 +55,7 @@ body .codehilite code, body .codehilite pre {
   border-left: 10px solid #d5d5d5;
   background-color: #fafafa;
   padding: 11px 15px 12px;
-/*  margin-left: -50%;*/
-/*  margin-left: -75%;*/
-  margin-left: -100%;
+  margin-left: -50%;
 }
 body .codehilite pre::-webkit-scrollbar {
   height: 25px;
