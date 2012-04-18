@@ -3,8 +3,19 @@
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="design/simple.css"><title>Ying Zu's homepage &gt; Spear Howto</title>
-<script src=design/jquery.min.js></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src=design/scripts.js></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15264588-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+</script>
 <!--[if lte IE 8]>
   <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
 <![endif]-->    
@@ -47,7 +58,6 @@
 <div>
   <div id="content">
     <h3><a name="getready">Getting ready</a></h3><br>
-    <p>
     Here we briefly explain how to use SPEAR to caculate the line lags for the AGN hosted by an imaginary
     <a href="http://www.mariowiki.com/Loopdeeloop_Galaxy"> Loopdeloop galaxy</a>.
     Every file and script referred to here can be found inside the code package.<br><br>
@@ -57,8 +67,6 @@
   </div>
   <div id="content">
     <h3><a name="prerequisites">Prerequisites</a></h3><br>
-    <p>
-
     SPEAR relies on <a href=http://www.netlib.org/lapack/>LAPACK</a> and <a href=http://www.netlib.org/blas/>BLAS</a> 
     to solve systems of linear equations.
     It requires no extra effort to install them as many systems either come with
@@ -92,7 +100,6 @@
   
   <div id="content">
     <h3><a name="datainput">Prepare the data and input files</a></h3><br>
-    <p>
     After modifying the "Makefile", you can type
     "make" in your favorate terminal to get the executable file "spear".
 
@@ -181,7 +188,6 @@
 
   <div id="content">
     <h3><a name="cont">Continuum Fitting</a></h3><br>
-    <p>
     The first step is to model the continuum light curve alone to determine the prior on tau and sigma. Enter the
     "single" directory, and run:
 
@@ -300,7 +306,6 @@
                                             
   <div id="content">
     <h3><a name="twoline">Joint Fitting of Continuum and Line Light Curves</a></h3><br>
-    <p>
 
     The lag-likelihood surface frequently has multiple peaks, so simply running
     a minimization routine ("ameoba" here) may not find the global peak likelihood.
@@ -473,7 +478,6 @@
 
   <div id="content">
     <h3><a name="twoline">Joint Fitting of Continuum and Line Light Curves</a></h3><br>
-    <p>
 
 
     What if two or more peaks are found after the joint fit? You have to resort to

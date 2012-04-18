@@ -1,8 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.2.12)  21 APR 2011 18:44
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.22)  17 APR 2012 23:24
 entering extended mode
- restricted \write18 enabled.
  %&-line parsing enabled.
-**cv.tex
+**cv
 (./cv.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -39,7 +38,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode not detected.
+Package ifpdf Info: pdfTeX in pdf mode detected.
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
@@ -141,24 +140,17 @@ Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 \c@Item=\count91
 \c@Hfootnote=\count92
 )
-*hyperref using default driver hdvips*
-(/usr/share/texmf-texlive/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2009/10/09 v6.79a Hyperref driver for dvips
-
-(/usr/share/texmf-texlive/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2009/10/09 v6.79a Hyperref definitions for pdfmark specials
-\pdf@docset=\toks16
-\pdf@box=\box26
-\pdf@toks=\toks17
-\pdf@defaulttoks=\toks18
+*hyperref using default driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 \Fld@listcount=\count93
-))
+)
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\@emptytoks=\toks19
+\@emptytoks=\toks16
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -174,13 +166,11 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 (/etc/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: dvips.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 130.
 
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count94
 ))
 (/usr/share/texmf-texlive/tex/latex/psnfss/charter.sty
 Package: charter 2005/04/12 PSNFSS-v9.2a (P.Dyballa) 
@@ -214,7 +204,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count94
+\c@section@level=\count95
 )
 LaTeX Info: Redefining \ref on input line 86.
 LaTeX Info: Redefining \pageref on input line 86.
@@ -223,7 +213,20 @@ LaTeX Info: Redefining \pageref on input line 86.
 \@outlinefile=\write3
 \openout3 = `cv.out'.
 
-\AtBeginShipoutBox=\box27
+\AtBeginShipoutBox=\box26
+ (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen106
+\scratchbox=\box27
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen107
+\MPnumerator=\count100
+\everyMPtoPDFconversion=\toks18
+)
 LaTeX Font Info:    Try loading font information for U+msa on input line 90.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
@@ -234,14 +237,24 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 90.
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-] (./cv.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./cv.aux) ) 
 Here is how much of TeX's memory you used:
- 4177 strings out of 493903
- 60814 string characters out of 1154813
- 131720 words of memory out of 3000000
- 7389 multiletter control sequences out of 15000+50000
- 14177 words of font info for 49 fonts, out of 3000000 for 9000
+ 4393 strings out of 493902
+ 63091 string characters out of 1154790
+ 133240 words of memory out of 3000000
+ 7598 multiletter control sequences out of 15000+50000
+ 19078 words of font info for 53 fonts, out of 3000000 for 9000
  706 hyphenation exceptions out of 8191
- 38i,11n,33p,267b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,9n,24p,263b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/te
+xmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/b
+itstrea/charter/bchb8a.pfb></usr/share/texmf-texlive/fonts/type1/bitstrea/chart
+er/bchr8a.pfb></usr/share/texmf-texlive/fonts/type1/bitstrea/charter/bchri8a.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on cv.pdf (1 page, 62093 bytes).
+PDF statistics:
+ 41 PDF objects out of 1000 (max. 8388607)
+ 2 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on cv.dvi (1 page, 7176 bytes).

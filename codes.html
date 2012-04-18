@@ -5,6 +5,17 @@
 <link rel="stylesheet" type="text/css" href="design/simple.css"><title>Ying Zu's homepage &gt; Codes</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src=design/scripts.js></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15264588-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+</script>
 <!--[if lte IE 8]>
   <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
 <![endif]-->    
@@ -47,16 +58,17 @@
 
 <div>
   <div id="content">
-    <h3><a name="javelin">JAVELIN</a></h3><br>
-        <span style="color:red"><b>J</b></span>ust
-        <span style="color:red"><b>A</b></span>nother
-        <span style="color:red"><b>V</b></span>ersion for
-        <span style="color:red"><b>E</b></span>stimating
-        <span style="color:red"><b>L</b></span>ags
-        <span style="color:red"><b>I</b></span>n
-        <span style="color:red"><b>N</b></span>uclei
-        <img src="design/blank.gif" alt="" border="0" height=0px width=100%>
-        JAVELIN, formerly known as <a href="codes.html#spear">SPEAR</a>, is a
+      <h2><a name="javelin">JAVELIN</a></h2><br>
+        <div class="codehilite"><pre><span 
+        style="color:red"><b>J</b></span>ust <span 
+        style="color:red"><b>A</b></span>nother <span
+        style="color:red"><b>V</b></span>ersion for <span
+        style="color:red"><b>E</b></span>stimating <span
+        style="color:red"><b>L</b></span>ags <span
+        style="color:red"><b>I</b></span>n <span
+        style="color:red"><b>N</b></span>uclei</pre></div><br>
+      <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Introduction:</span>
+        <p>JAVELIN, formerly known as <a href="codes.html#spear">SPEAR</a>, is a
         new approach to reverberation mapping that computes the lags between the
         AGN continuum and emission line light curves and their statistical
         confidence limits. It uses a damped random walk model to describe the
@@ -70,41 +82,46 @@
         model is presently a tophat, but this can be altered by changing the
         line-continuum covariance matrices. It is also able to cope with some
         problems in traditional reverberation mapping, such as irregular
-        sampling, correlated errors and seasonal gaps.
-        <img src="design/blank.gif" alt="" border="0" height=0px width=100%>
-        For a thorough description of the underlying statistics and physics, please see  <a
+        sampling, correlated errors and seasonal gaps.</p>
+      <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Documents:</span>
+        <ul>
+        <li>For a thorough description of the underlying statistics and physics, please see  <a
             href="http://arxiv.org/abs/1008.0641">Zu et al. 2011</a>. A local copy can be obtained  <a
-            href="paper/reverb_zu.pdf">here</a>.
-        For a somewhat more pedagogical derivation of the mathematical formalism than is in the paper, please see <a
-            href="paper/spear_math.pdf">here</a>.
-        For studies using the damped random walk process to model quasar variability, see 
+            href="paper/reverb_zu.pdf">here</a>.</li>
+        <li>For a somewhat more pedagogical derivation of the mathematical formalism than is in the paper, please see <a
+            href="paper/spear_math.pdf">here</a>.</li>
+        <li>For studies using the damped random walk process to model quasar variability, see 
         <a href="http://adsabs.harvard.edu/abs/2009ApJ...698..895K">Kelly et al. 2009</a>,
         <a href="http://adsabs.harvard.edu/abs/2010ApJ...708..927K">Kozlowski et al. 2010</a>,
         <a href="http://adsabs.harvard.edu/abs/2010arXiv1004.0276M">MacLeod et al. 2010</a>, and
-        <a href="http://adsabs.harvard.edu/abs/2012arXiv1202.3783Z">Zu et al.  2012</a>.
-        <img src="design/blank.gif" alt="" border="0" height=0px width=100%>
-        For <b>download and documentations</b>, please check out <a href="https://bitbucket.org/nye17/javelin">the online repository here</a>.
-        <img src="design/blank.gif" alt="" border="0" height=0px width=100%>
-        You are welcome to use and modify the software (either JAVELIN or SPEAR), 
+        <a href="http://adsabs.harvard.edu/abs/2012arXiv1202.3783Z">Zu et al.
+            2012</a>.</li>
+        </ul>
+      <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Download:</span>
+      <p>For <b>download and documentations</b>, please check out <a
+          href="https://bitbucket.org/nye17/javelin">the online repository
+          here</a>.</p> 
+      <span style="font-family: Helvetica;font-size: 12pt; color: gray;">Citation:</span>
+      <p>You are welcome to use and modify the software (either JAVELIN or SPEAR), 
         however please acknowledge its use either as is
-        or with modifications with a citation to:
-        <img src="design/blank.gif" alt="" border="0" height=0px width=100%>
+        or with modifications with a citation to:</p>
         <div class="codehilite"><pre><center>Zu Y, Kochanek, C.S., & Peterson, B.M. 2011, ApJ, 735, 80</center></pre></div>
   </div>
 
   <div id="content">
-    <h3><a name="spear">SPEAR</a></h3><br>
-        <span style="color:red"><b>S</b></span>tochastic
-        <span style="color:red"><b>P</b></span>rocess
-        <span style="color:red"><b>E</b></span>stimation for
-        <span style="color:red"><b>A</b></span>GN
-        <span style="color:red"><b>R</b></span>everberations
-        <img src="design/blank.gif" alt="" border="0" height=0px width=100%>
-        SPEAR, which was originally written in Fortran, has been superseded by
-        its Python version <li><a href="codes.html#javelin">JAVELIN</a>.
+    <h2><a name="spear">SPEAR</a></h2><br>
+    <div class="codehilite"><pre><span
+    style="color:red"><b>S</b></span>tochastic <span
+    style="color:red"><b>P</b></span>rocess <span
+    style="color:red"><b>E</b></span>stimation for <span
+    style="color:red"><b>A</b></span>GN <span
+    style="color:red"><b>R</b></span>everberations</pre></div><br>
+      <span style="font-family: Helvetica;font-size: 12pt; color: gray;">SPEAR has evolved:</span>
+      <p>SPEAR, which was originally written in Fortran, has been superseded by
+        its Python version <a href="codes.html#javelin">JAVELIN</a>.
         However, the old versoin of SPEAR (v3.1.2) can still be downloaded 
         from <a href="code/spear_v3.1.2.tar.gz">here</a>, and the original
-        documentation can be found in <a href="spearhowto.html"><b>Howto for SPEAR</b></a>.
+        documentation can be found in <a href="spearhowto.html"><b>Howto for SPEAR</b></a>.</p>
   </div>
 
   <div id="content">

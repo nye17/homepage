@@ -1,8 +1,9 @@
 @import url('reset-min.css');
 @import url('graybase.css');
 
-/*nav {position:fixed;top:0;width:100%;}*/
-nav {position:fixed;top:0;z-index:10;}
+nav {position:fixed; 
+    top:0; 
+    z-index:10;}
 
 nav :link, nav :visited {
   display:block;
@@ -13,7 +14,6 @@ nav :link, nav :visited {
 
 nav :focus {
   outline:none}
-
 
 nav > ul {
   font:.7em "lucida grande", "lucida sans", "luxi sans", "lucida sans unicode", arial, sans-serif;
@@ -85,14 +85,13 @@ nav > ul > li > a:hover, nav > ul > li > a:focus {
 
 
 
-
-
 /*floating center text*/
+
 div {position:relative; font:.95em/2.0 "lucida grande", arial, sans-serif;}
-body > div {float:right; right:50%; width:800px}
+body > div {float:right; right:50%; width:1000px}
 div * {left:50%;}
 
 #content {
   padding:10% 50px;
-  max-width:800px;
+  max-width:1800px;
 }
