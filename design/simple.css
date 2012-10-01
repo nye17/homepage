@@ -95,3 +95,21 @@ div * {left:50%;}
   padding:10% 50px;
   max-width:1800px;
 }
+
+#intronote {
+  padding: 10% 50px;
+  margin-bottom: -100px;
+  max-width:1800px;
+}
+
+/* wrap youtube videos */
+
+.youtube-player{
+    border: 1px solid #1D740C;
+    height: 360px;
+    width:  640px;
+    padding: 0px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
