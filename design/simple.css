@@ -2,85 +2,87 @@
 @import url('graybase.css');
 
 nav {position:fixed; 
-    top:0; 
-    z-index:10;}
+    top: 0; 
+    /* text-align:center; */
+    z-index: 10;}
 
 nav :link, nav :visited {
-  display:block;
-  color:#555;
-  background:#e0e0cf;
-  text-decoration:none;
-  text-shadow:0 1px 0 rgba(255,255,255,.65)}
+    display:block;
+    color:#555;
+    background:#e0e0cf;
+    text-decoration:none;
+    text-shadow:0 1px 0 rgba(255,255,255,.65)}
 
 nav :focus {
-  outline:none}
+    outline:none}
 
 nav > ul {
-  font:.7em "lucida grande", "lucida sans", "luxi sans", "lucida sans unicode", arial, sans-serif;
-  overflow:hidden;
-  background:#e0e0cf;
-  background:-moz-linear-gradient(#f5f5f5, #e0e0cf);
-  background:-webkit-gradient(
-    linear,
-    0 0,
-    0 100%,
-    color-stop(0, #e0e0cf),
-    color-stop(0.98, #e3e3e3),
-    color-stop(1, #fff)
+    font:.7em "lucida grande", "lucida sans", "luxi sans", "lucida sans unicode", arial, sans-serif;
+    display:inline;
+    overflow:hidden;
+    background:#e0e0cf;
+    background:-moz-linear-gradient(#f5f5f5, #e0e0cf);
+    background:-webkit-gradient(
+        linear,
+        0 0,
+        0 100%,
+        color-stop(0, #e0e0cf),
+        color-stop(0.98, #e3e3e3),
+        color-stop(1, #fff)
   );
   border-bottom:1px solid #ccc}
 
 nav > ul > li {
-  float:left;
-  margin:10px}
+    float:left;
+    margin:10px}
 
 nav > ul > li > a, nav h1 {
-  font-weight:700}
+    font-weight:700}
 
 nav > ul > li > a:hover, nav > ul > li > a:focus {
-  background:rgba(0,0,0,.1)}
+    background:rgba(0,0,0,.1)}
 
 .js_enabled nav a h1:after {
-  content:"\25BC";
-  font-size:6px;
-  margin:-1px 0 0 3px}
+    content:"\25BC";
+    font-size:6px;
+    margin:-1px 0 0 3px}
 
 .js_enabled nav > ul > li {
-  margin:0}
+    margin:0}
 
 .js_enabled nav > ul > li > a {
-  position:relative;
-  padding:6px 12px 7px;
-  border-right:1px solid rgba(0,0,0,.12)}
+    position:relative;
+    padding:6px 12px 7px;
+    border-right:1px solid rgba(0,0,0,.12)}
 
 .js_enabled nav > ul > li > a:after {
-  content:"";
-  position:absolute;
-  top:0;
-  right:-2px;
-  width:1px;
-  height:100%;
-  background:rgba(255,255,255,.8)}
+    content:"";
+    position:absolute;
+    top:0;
+    right:-2px;
+    width:1px;
+    height:100%;
+    background:rgba(255,255,255,.8)}
 
 .js_enabled nav .subnav {
-  position:absolute;
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  border-radius:5px;
-  border:2px solid #eee;
-  top:32px;
-  z-index:1;
-  background:#fff}
+    position:absolute;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    border:2px solid #eee;
+    top:32px;
+    z-index:1;
+    background:#fff}
 
 .js_enabled nav .subnav.active {
-  z-index:2}
+    z-index:2}
 
 .js_enabled nav .subnav a {
-  padding:3px 8px 5px}
+    padding:3px 8px 5px}
 
 .js_enabled nav .subnav a:hover, .js_enabled nav .subnav a:focus {
-  background:transparent;
-  color: #d4a21a;
+    background:transparent;
+    color: #d4a21a;
   }
 
 
