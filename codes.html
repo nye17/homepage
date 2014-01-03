@@ -65,7 +65,10 @@
 
 
   <div id="content">
-    <h2><a name="javelin">JAVELIN</a></h2><br>
+    <h2><a name="javelin">JAVELIN</a></h2>
+    <img src="design/blank.gif" alt="" border="0" height=30px width=100%>
+    <!-- <hr> -->
+    <!-- <img src="design/blank.gif" alt="" border="0" height=30px width=100%> -->
       <div class="codehilite"><pre><span 
       style="color:red"><b>J</b></span>ust <span 
       style="color:red"><b>A</b></span>nother <span
@@ -78,52 +81,65 @@
     <br>
       <p class="Introduction">JAVELIN, formerly known as <a href="codes.html#spear">SPEAR</a>, is a
       new approach to reverberation mapping that computes the lags between the
-      AGN continuum and emission line light curves and their statistical
-      confidence limits. It uses a damped random walk model to describe the
-      quasar continuum variability and the ansatz that emission line
-      variability is a scaled, smoothed and displaced version of the
-      continuum. While currently configured only to simultaneously fit light
-      curve means, it includes a general linear parameters formalism to fit
-      more complex trends or calibration offsets.  The noise matrix can be
-      modified to allow for correlated errors, and the correlation matrix can
-      be modified to use a different stochastic process. The transfer function
+      AGN continuum and emission line (spectroscopic or photometric) light
+      curves and their statistical confidence limits. It uses a damped random
+      walk model to describe the quasar continuum variability and the ansatz
+      that emission line variability is a scaled, smoothed and displaced version
+      of the continuum. While currently configured only to simultaneously fit
+      light curve means, it includes a general linear parameters formalism to
+      fit more complex trends or calibration offsets.  The noise matrix can be
+      modified to allow for correlated errors, and the correlation matrix can be
+      modified to use a different stochastic process. The transfer function
       model is presently a tophat, but this can be altered by changing the
       line-continuum covariance matrices. It is also able to cope with some
-      problems in traditional reverberation mapping, such as irregular
-      sampling, correlated errors and seasonal gaps.</p>
+      problems in traditional reverberation mapping, such as irregular sampling,
+      correlated errors and seasonal gaps.</p>
     <br>
     <h3>Documents</h3>
     <br>
       <ul>
-      <li>For a thorough description of the underlying statistics and physics, please see  <a
+          <li><p class="rest">For a thorough description of the underlying statistics and physics, please see  <a
           href="http://arxiv.org/abs/1008.0641">Zu et al. 2011</a>. A local copy can be obtained  <a
-          href="paper/reverb_zu.pdf">here</a>.</li>
-      <li>For a somewhat more pedagogical derivation of the mathematical formalism than is in the paper, please see <a
-          href="paper/spear_math.pdf">here</a>.</li>
-      <li>For studies using the damped random walk process to model quasar variability, see 
+          href="paper/reverb_zu.pdf">here</a>.</p></li>
+      <li><p class="rest">For a somewhat more pedagogical derivation of the mathematical formalism than is in the paper, please see <a
+          href="paper/spear_math.pdf">here</a>.</p></li>
+      <li><p class="rest">For studies using the damped random walk process to model quasar variability, see 
       <a href="http://adsabs.harvard.edu/abs/2009ApJ...698..895K">Kelly et al. 2009</a>,
       <a href="http://adsabs.harvard.edu/abs/2010ApJ...708..927K">Kozlowski et al. 2010</a>,
       <a href="http://adsabs.harvard.edu/abs/2010arXiv1004.0276M">MacLeod et al. 2010</a>, and
       <a href="http://adsabs.harvard.edu/abs/2012arXiv1202.3783Z">Zu et al.
-          2012</a>.</li>
+          2012</a>.</p></li>
       </ul>
     <br>
     <h3>Download</h3>
     <br>
-    <p>For <b>download and documentations</b>, please check out <a
+    <p class="rest">For <b>download and documentations</b>, please check out <a
         href="http://bitbucket.org/nye17/javelin">the online repository
         here</a>.</p> 
     <br>
     <h3>Citation</h3>
     <br>
-    <p>You are welcome to use and modify the software (either JAVELIN or SPEAR), 
-      however please acknowledge its use either as is
-      or with modifications with a citation to:</p>
-      <div class="codehilite"><pre><center>Zu Y, Kochanek, C.S., & Peterson, B.M. 2011, ApJ, 735, 80</center></pre></div>
+    <p class="rest">
+    You are welcome to use and modify JAVELIN, however please acknowledge its
+    use either as is or with modifications with citations to:
+    <p class="author">
+    <a href="http://adsabs.harvard.edu/abs/2013ApJ...765..106Z">Zu, Y.,
+        Kochanek, C.S., Kozlowski, S., &amp; Udalski, A. 2013, ApJ, 765, 106</a></p>
+    for quasar optical variability studies, to
+    <p class="author">
+    <a href="http://adsabs.harvard.edu/abs/2011ApJ...735...80Z">Zu, Y.,
+        Kochanek, C.S., &amp; Peterson, B.M. 2011, ApJ, 735, 80</a></p>
+    for spectroscopic reverberation mapping, and/or to
+    <p class="author">
+    <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1310.6774">Zu,
+        Y., Kochanek, C.S., Kozlowski, S., &amp; Peterson, B.M. 2013, astro-ph/1310.6774</a></p>for photometric reverberation mapping.</p> 
+    <img src="design/blank.gif" alt="" border="0" height=30px width=100%>
+    <hr>
   </div>
 
   <div id="content">
-    <h2><a name="spear">SPEAR</a></h2><br>
+    <h2><a name="spear">SPEAR</a></h2>
+    <img src="design/blank.gif" alt="" border="0" height=30px width=100%>
     <div class="codehilite"><pre><span
     style="color:red"><b>S</b></span>tochastic <span
     style="color:red"><b>P</b></span>rocess <span
@@ -137,19 +153,24 @@
         However, the old versoin of SPEAR (v3.1.2) can still be downloaded 
         from <a href="code/spear_v3.1.2.tar.gz">here</a>, and the original
         documentation can be found in <a href="spearhowto.html"><b>Howto for SPEAR</b></a>.</p>
+    <img src="design/blank.gif" alt="" border="0" height=30px width=100%>
+    <hr>
   </div>
 
   <div id="content">
     <h2><a name="kindlize">Kindlize</a></h2>
-    <br>
+    <img src="design/blank.gif" alt="" border="0" height=30px width=100%>
+    <hr>
     <img src="http://bitbucket.org/nye17/kindlize/raw/default/screenshots/figpage_after_small_framed.png"
     class="imgleft">
     <br>
     <p class="Introduction"><a href="http://bitbucket.org/nye17/kindlize">Kindlize</a> is a python package to generate, manage, and sync Kindle-friendly arXiv pre-prints with your Kindle DX device. It provides perfect astro-ph reading experience on my Kindle DX and saves me from printing stacks of papers that I never read. </p><br>
     
-    <p>For <b>download and documentations</b>, please check out <a
+    <p class="rest">For <b>download and documentations</b>, please check out <a
         href="http://bitbucket.org/nye17/kindlize">the online repository
         here</a>.</p> 
+    <img src="design/blank.gif" alt="" border="0" height=30px width=100%>
+    <hr>
   </div>
 
 </div>

@@ -1,38 +1,85 @@
+/* Ying's css */
+
+/* headlines */
+
+/* h1 is reserved for the nav bar. */
 
 h2 {color : #000000;
 font-size : 20pt;
 font-family: "Yanone Kaffeesatz";
+font-weight: normal;
 }
 
 h3 {color : #000000;
 font-size : 18pt;
 font-family: "Yanone Kaffeesatz Light";
+font-weight: normal;
 }
 
 h4 {
 color : #000000;
 font-size : 16pt;
-margin : 0px;
 font-family: "Yanone Kaffeesatz Extra Light";
+font-weight: normal;
+}
+
+/* regular block text (first paragraph) */
+p.introduction {
+color : #000000;
+font-size : 12pt;
+font-weight: normal;
+font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 /* drop cap paragraph  */
 p.introduction:first-letter {
- font-size : 400%;
- float: left; 
- color: #D4D4C7;
- line-height: 35px;
- padding-top: 3px; 
- padding-right: 3px;
- font-family: Times, serif, Georgia;
+font-size : 400%;
+float: left; 
+color: #D4D4C7;
+line-height: 35px;
+padding-top: 3px; 
+padding-right: 3px;
+font-family: Papyrus, fantasy;
 }
 
+/* regular block text (non-first paragraph) */
+p.rest {
+color : #000000;
+font-size : 12pt;
+font-weight: normal;
+font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+p.signature {
+color : #808080;
+font-size : 16pt;
+font-family: "Yanone Kaffeesatz Extra Light";
+font-weight: normal;
+}
+
+p.footnote {
+color : #808080;
+font-size : 12pt;
+font-weight: normal;
+font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+/* reference lines */
 p.ref {
 color : #000000;
 font-size : 16pt;
 margin : 0px;
 font-family: "Yanone Kaffeesatz Extra Light";
 text-align: right;
+}
+
+/* author list */
+p.author {
+color : #808080;
+font-size : 14pt;
+margin : 0px;
+font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+font-style : italic;
 }
 
 
@@ -53,6 +100,7 @@ text-align: right;
 }
 
 body code, body pre {
+  /* font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace; */
   font-family: Consolas, Menlo, "Courier New", monospace;
   font-size: 14px;
 }
@@ -142,7 +190,7 @@ body {
 font {
     color : #808080;
     font-size : 12pt;
-    font-family : verdana, helvetica;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
 
@@ -291,7 +339,7 @@ img.greeting:hover {
 }
 
 /* research image highlights */
-.imgleft {
+img.imgleft {
   float: left;
   margin-left:    0px;
   margin-right:  20px;
