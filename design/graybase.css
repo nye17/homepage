@@ -348,3 +348,13 @@ img.imgleft {
   height: 400px;
 }
 
+/* similar to imgleft, but for small logos */
+img.imglogo {
+  float: left;
+  margin-left:    0px;
+  margin-right:  10px;
+  margin-top:    10px;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
