@@ -313,7 +313,8 @@ figcaption {
   position:relative;
   bottom:65%;
   left:0%;
-  font:italic 1.00em georgia;
+  /* font:italic 1.00em georgia; */
+  font-family: Papyrus, fantasy;
   color:#000000;
   text-shadow:0 1px 1px rgb(0,0,0);
 }
@@ -329,14 +330,16 @@ img.greeting {
   );
   -webkit-mask-repeat:no-repeat;
   -webkit-mask-size: 100% 100%;
-  -webkit-transition:-webkit-mask-size 1s cubic-bezier(0,0,.4,1),
-                     opacity 1s linear;
+  -webkit-transition:-webkit-mask-size .5s cubic-bezier(0,0,.4,1),
+                     opacity .5s linear;
+    /* -webkit-transition:.5s ease; */
 }
 
 img.greeting:hover {
   -webkit-mask-size:0 100%;
   opacity:0.0;
 }
+
 
 /* research image highlights */
 img.imgleft {
