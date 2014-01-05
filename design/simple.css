@@ -3,7 +3,6 @@
 
 nav {position:fixed; 
     top: 0; 
-    /* text-align:center; */
     z-index: 10;}
 
 nav :link, nav :visited {
@@ -84,34 +83,3 @@ nav > ul > li > a:hover, nav > ul > li > a:focus {
     background:transparent;
     color: #d4a21a;
   }
-
-
-
-/*floating center text*/
-
-div {position:relative; font:.95em/2.0 "lucida grande", arial, sans-serif;}
-body > div {float:right; right:50%; width:1000px}
-div * {left:50%;}
-
-#content {
-  padding:10% 50px;
-  max-width:1800px;
-}
-
-#intronote {
-  padding: 10% 50px;
-  margin-bottom: -100px;
-  max-width:1800px;
-}
-
-/* wrap youtube videos */
-
-.youtube-player{
-    border: 1px solid #1D740C;
-    height: 360px;
-    width:  640px;
-    padding: 0px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-

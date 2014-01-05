@@ -1,6 +1,7 @@
-/*@import url('../design/graybase.css');*/
-@import url('../design/simple.css');
-
+/**
+* @file: highslide.css 
+* @version: 4.1.13
+*/
 .highslide-container div {
 	font-family: Verdana, Helvetica;
 	font-size: 10pt;
@@ -30,7 +31,6 @@
 	border-width: 2px;
 	border-style: solid;
 	border-color: white;
-	background: gray;
 }
 .highslide-wrapper, .highslide-outline {
 	background: white;
@@ -58,7 +58,7 @@
 	margin: 0.4em;
 }
 .highslide-dimming {
-	position: absolute;
+	/*position: absolute;*/
 	background: black;
 }
 a.highslide-full-expand {
@@ -101,7 +101,6 @@ a.highslide-credits:hover i {
 
 .highslide-viewport {
 	display: none;
-	visibility: hidden;
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -146,6 +145,7 @@ a.highslide-credits:hover i {
 	border: 1px solid silver;
 	background: #ededed;
 	margin: 2px;
+	padding: 0;
 	line-height: 0;
 	overflow: hidden;
 }
@@ -156,7 +156,6 @@ a.highslide-credits:hover i {
 }
 .highslide-gallery ul img {
  	position: relative;
- 	border-width: 1px;
 	top: -50%;
 	left: -50%;
 }
@@ -200,6 +199,7 @@ html>/**/body .highslide-gallery ul img {
 	float: left;
 	padding: 5px 0;
 	margin:0;
+	list-style: none;
 }
 .highslide-controls a {
 	background-image: url(graphics/controlbar-white.gif);
@@ -288,6 +288,9 @@ html>/**/body .highslide-gallery ul img {
 .highslide-html {
 	background-color: white;
 }
+.mobile .highslide-html {
+	border: 1px solid silver;
+}
 .highslide-html-content {
 	display: none;
 	width: 400px;
@@ -373,7 +376,7 @@ html>/**/body .highslide-gallery ul img {
 	position: absolute;
 	right: 2px;
 	top: 2px;
-	z-index: 2;
+	z-index: 5;
 	padding: 0;
 }
 .draggable-header .highslide-header .highslide-close a {
@@ -399,7 +402,8 @@ html>/**/body .highslide-gallery ul img {
 }
 .titlebar .highslide-heading {
 	position: absolute;
-	margin: 1px 0.4em;
+	width: 90%;
+	margin: 1px 0 1px 5px;
 	color: #666666;
 }
 
@@ -713,6 +717,7 @@ html>/**/body .highslide-gallery ul img {
 
 .highslide-thumbstrip {
 	height: 100%;
+	direction: ltr;
 }
 .highslide-thumbstrip div {
 	overflow: hidden;
@@ -799,6 +804,10 @@ html>/**/body .highslide-gallery ul img {
 .dark .highslide-thumbstrip-horizontal .highslide-marker, .highslide-viewport .highslide-thumbstrip-horizontal .highslide-marker {
 	border-bottom-color: white !important;
 }
+
+.highslide-thumbstrip-vertical-overlay {
+	overflow: hidden !important;
+}
 .highslide-thumbstrip-vertical div {
 	height: 100%;
 }
@@ -837,7 +846,7 @@ html>/**/body .highslide-gallery ul img {
 	margin: 10px 0 0 10px;
 }
 .highslide-thumbstrip-vertical img {
-	max-width: 60px;
+	width: 60px; /* t=5481 */
 }
 .highslide-thumbstrip-vertical .highslide-marker {
 	left: 0;
@@ -878,45 +887,3 @@ html>/**/body .highslide-gallery ul img {
 .highslide-thumbstrip-float .highslide-marker {
 	display: none;
 }
-
-
-/*****************************************************************************/
-/* The following styles are added by the Highslide Editor                    */
-/*****************************************************************************/
-.highslide-wrapper, .highslide-outline {
-	background: #FFFFFF;
-}
-.highslide img {
-	border: 1px solid #D0D0D0;
-}
-.highslide:hover img {
-	border-color: #A0A0A0;
-}
-.highslide-active-anchor img {
-	visibility: visible;
-	border-color: #808080 !important;
-}
-.highslide-image {
-	border: 2px solid #FFFFFF;
-}
-.highslide-loading {
-	color: black;
-	border: 1px solid black;
-	background-color: white;
-	background-image: url(graphics/loader.white.gif);
-}
-
-.highslide-controls {
-	position: static !important;
-	margin-bottom: 0;
-	width: 195px !important;
-}
-.highslide-gallery ul li {
-	width: 106px;
-	height: 106px;
-	border: 1px solid #D0D0D0;
-	background: #EDEDED;
-	margin: 2px;
-}
-
-

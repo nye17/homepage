@@ -2,7 +2,16 @@
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="design/simple.css"><title>Ying Zu's homepage &gt; Research</title>
+<title>Ying Zu's homepage &gt; Research</title>
+<script type="text/javascript" src="highslide/highslide-with-html.js"></script>
+<link rel="stylesheet" type="text/css" href="highslide/highslide.css" />
+<link rel="stylesheet" type="text/css" href="design/simple.css">
+<script type="text/javascript">
+    // Apply the Highslide settings
+    hs.graphicsDir = 'highslide/graphics/';
+    hs.outlineType = 'rounded-white';
+    hs.outlineWhileAnimating = true;
+</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src=design/scripts.js></script>
 <script type="text/javascript">
@@ -55,11 +64,13 @@
   </ul>
 </nav>
 
-<div>
+<div id="page">
 
   <div id="intronote">
-      <h4>The following highlights my recent research either in figures or
-          Youtube videos. For a full publication list you can find it on
+      <h4>The following highlights my recent research either in figures and/or
+          Youtube videos (click <img src="design/YouTube.png" alt=""
+          class="imgicon"> below)
+          . For a full publication list you can find it on
       <a href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&db_key=PRE&qform=AST&arxiv_sel=astro-ph&arxiv_sel=cond-mat&arxiv_sel=cs&arxiv_sel=gr-qc&arxiv_sel=hep-ex&arxiv_sel=hep-lat&arxiv_sel=hep-ph&arxiv_sel=hep-th&arxiv_sel=math&arxiv_sel=math-ph&arxiv_sel=nlin&arxiv_sel=nucl-ex&arxiv_sel=nucl-th&arxiv_sel=physics&arxiv_sel=quant-ph&arxiv_sel=q-bio&sim_query=YES&ned_query=YES&adsobj_query=YES&aut_logic=OR&obj_logic=OR&author=Zu%2C+Ying">[ADS]</a>
       </h4>
   </div>
@@ -129,7 +140,13 @@
     <p class="ref">
     <a href="http://arxiv.org/abs/1211.1379">[on astro-ph]</a>
     <a href="http://adsabs.harvard.edu/abs/2013MNRAS.431.3319Z">[on ADS]</a>
-    <a href-"http://www.youtube.com/watch?v=7RB49odfSGo">[on Youtube]</a>
+    <a href="http://www.youtube.com/embed/7RB49odfSGo?rel=0&amp;wmode=transparent"
+        onclick="return hs.htmlExpand(this, 
+        {objectType: 'iframe', width: 480, height: 385, 
+        allowSizeReduction: false, wrapperClassName: 'draggable-header no-footer',
+        preserveContent: false, objectLoadTime: 'after'})"
+        class="highslide">
+        <img src="design/YouTube.png" alt="" class="imgicon"></a>
     </p>
 
     
@@ -167,7 +184,13 @@
     <p class="ref">
     <a href="http://arxiv.org/abs/1207.3794">[on astro-ph]</a>
     <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1207.3794">[on ADS]</a>
-    <a href-"http://www.youtube.com/watch?v=F3ZR3B4r5pQ">[on Youtube]</a>
+    <a href="http://www.youtube.com/embed/F3ZR3B4r5pQ?rel=0&amp;wmode=transparent"
+        onclick="return hs.htmlExpand(this, 
+        {objectType: 'iframe', width: 480, height: 385, 
+        allowSizeReduction: false, wrapperClassName: 'draggable-header no-footer',
+        preserveContent: false, objectLoadTime: 'after'})"
+        class="highslide">
+        <img src="design/YouTube.png" alt="" class="imgicon"></a>
     </p>
 
     <hr>
@@ -278,7 +301,13 @@
     <p class="ref">
     <a href="http://arxiv.org/abs/1202.3783">[on astro-ph]</a>
     <a href="http://adsabs.harvard.edu/abs/2013ApJ...765..106Z">[on ADS]</a>
-    <a href-"http://www.youtube.com/watch?v=8_UzzHuLczw">[on Youtube]</a>
+    <a href="http://www.youtube.com/embed/8_UzzHuLczw?rel=0&amp;wmode=transparent"
+        onclick="return hs.htmlExpand(this, 
+        {objectType: 'iframe', width: 480, height: 385, 
+        allowSizeReduction: false, wrapperClassName: 'draggable-header no-footer',
+        preserveContent: false, objectLoadTime: 'after'})"
+        class="highslide">
+        <img src="design/YouTube.png" alt="" class="imgicon"></a>
     </p>
 
     <hr>
