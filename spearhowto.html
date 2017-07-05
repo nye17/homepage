@@ -18,7 +18,7 @@
 </script>
 <!--[if lte IE 8]>
   <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
-<![endif]-->    
+<![endif]-->
 </head>
 <body>
 
@@ -67,7 +67,7 @@
   </div>
   <div id="content">
     <h3><a name="prerequisites">Prerequisites</a></h3><br>
-    SPEAR relies on <a href=http://www.netlib.org/lapack/>LAPACK</a> and <a href=http://www.netlib.org/blas/>BLAS</a> 
+    SPEAR relies on <a href=http://www.netlib.org/lapack/>LAPACK</a> and <a href=http://www.netlib.org/blas/>BLAS</a>
     to solve systems of linear equations.
     It requires no extra effort to install them as many systems either come with
     LAPACK and BLAS pre-installed (MAC), or have them conveniently in software
@@ -75,14 +75,14 @@
     each other, and like BLAS it has spawned many different variants as well,
     especially <a href=http://math-atlas.sourceforge.net/>ATLAS</a> if you want
     your SPEAR to be multithreading in a multi-core environment.
-    
+
     <br><br>
-    
+
     For more information about LAPACK/BLAS and ATLAS, please read <a href=http://www.netlib.org/lapack/faq.html>LAPACK FAQ</a> and <a href=http://math-atlas.sourceforge.net/faq.html>ATLAS FAQ</a>.
 
     <br><br>
 
-    The code is written in Fortran 90. To compile, please make sure you have a valid fortran compiler in your 
+    The code is written in Fortran 90. To compile, please make sure you have a valid fortran compiler in your
     system, then edit the "Compilation options" section in the "Makefile", specifically,
 
     <br><br>
@@ -93,11 +93,11 @@
     <span>F90     = ifort      # Your Fortran compiler, e.g., gfortran and ifort, etc</span>
     <span>LIBDIR  = pathtolib  # Path to your LAPACK/BLAS/ATLAS libraries, e.g., /usr/lib/atlas-base/</span>
     <span>BINDIR = $(HOME)/bin # Place where you want to put the spear executable file,</span>
-    <span>                     # please make sure it is in your system PATH, e.g., ~/bin</span> 
+    <span>                     # please make sure it is in your system PATH, e.g., ~/bin</span>
     </pre></div>
 
   </div>
-  
+
   <div id="content">
     <h3><a name="datainput">Prepare the data and input files</a></h3><br>
     After modifying the "Makefile", you can type
@@ -107,9 +107,9 @@
 
     SPEAR requires a specific format for the light curve data file. You can find example data files
     "lc_loopdeloop_*.dat" in the "loopdeloop/single" and "loopdeloop/tophat_h*" directories. Imagine you want to
-    fit two light curves, the first one should always be the continuum light curves and the second one be the line 
+    fit two light curves, the first one should always be the continuum light curves and the second one be the line
     light curve. If the continuum light curve has 5 data points while the line light curve has 4, the data file should
-    be like (texts after # are comments, not part of the file) 
+    be like (texts after # are comments, not part of the file)
 
     <br><br>
 
@@ -125,7 +125,7 @@
     <span>8545.8   9.82    0.23</span>
     <span>8890.4  11.86    0.58</span>
     <span>8949.4  10.55    0.87</span>
-    <span>8988.6  11.06    0.27</span>    
+    <span>8988.6  11.06    0.27</span>
     </pre></div>
 
     <br><br>
@@ -136,31 +136,31 @@
 
     <br><br>
     <div class="codehilite"><pre>
-    <span>[yingzu@loopdeloop]$ GenLC.pl</span> 
-    <span>USAGE: gen_lc.pl OBJECT NCURVE NAME_LINE01 [NAME_LINE02] ...</span> 
-    <span></span> 
-    <span>[yingzu@loopdeloop]$ GenLC.pl loopdeloop 1 con</span> 
-    <span>******************************</span> 
-    <span>Object: loopdeloop</span> 
-    <span># of Lines: 1</span> 
-    <span>Names: con</span> 
-    <span>OUTPUT: lc_loopdeloop_con.dat</span> 
-    <span>******************************</span> 
-    <span>Opening: loopdeloop_con.dat</span> 
-    <span>number of data points in cont: 36</span> 
-    <span>DONE.</span> 
+    <span>[yingzu@loopdeloop]$ GenLC.pl</span>
+    <span>USAGE: gen_lc.pl OBJECT NCURVE NAME_LINE01 [NAME_LINE02] ...</span>
+    <span></span>
+    <span>[yingzu@loopdeloop]$ GenLC.pl loopdeloop 1 con</span>
+    <span>******************************</span>
+    <span>Object: loopdeloop</span>
+    <span># of Lines: 1</span>
+    <span>Names: con</span>
+    <span>OUTPUT: lc_loopdeloop_con.dat</span>
+    <span>******************************</span>
+    <span>Opening: loopdeloop_con.dat</span>
+    <span>number of data points in cont: 36</span>
+    <span>DONE.</span>
     </pre></div>
 
     <br><br>
 
-    which will generate "lc_loopdeloop_con.dat" that works 
+    which will generate "lc_loopdeloop_con.dat" that works
     with the code in convolution mode "single", you can then copy this file to the "single" directory.
     <div class="codehilite"><pre>
     <span>[yingzu@loopdeloop]$ cp lc_loopdeloop_con.dat ./single/</span>
     </pre></div>
 
     <br><br>
-       
+
     The example input files can be found as "input.*" files under "loopdeloop/single" and "loopdeloop/tophat_h*".
     If you feed the input by STDIN, the program will
     prompt you whenever an input is needed. Generally it asks for the light curve
@@ -196,17 +196,17 @@
     <div class="codehilite"><pre>
     <span>[yingzu@loopdeloop]$ cd ./single/</span>
     <span>[yingzu@single]$ vi input.single</span>
-    <span>lc_loopdeloop_con.dat</span>                                                    
+    <span>lc_loopdeloop_con.dat</span>
     <span>2                                        # single mode</span>
-    <span>0.794328234724282 25.1188643150958       # \hat{\sigma} \tau</span>                               
-    <span>1 1                                      # vary everything</span>                               
-    <span>1                                        # run ameoba</span>                               
-    <span>1                                        # run prediction</span>                                
-    <span>1                                        # run MCMC</span> 
-    <span>mcmc_con.dat</span> 
-    <span>[yingzu@single]$ spear &#060; input.single </span> 
+    <span>0.794328234724282 25.1188643150958       # \hat{\sigma} \tau</span>
+    <span>1 1                                      # vary everything</span>
+    <span>1                                        # run ameoba</span>
+    <span>1                                        # run prediction</span>
+    <span>1                                        # run MCMC</span>
+    <span>mcmc_con.dat</span>
+    <span>[yingzu@single]$ spear &#060; input.single </span>
     </pre></div>
-                                            
+
     <br><br>
 
     here we assume the executable "spear" always exists in the system variable `$PATH`. The output files are:
@@ -217,20 +217,20 @@
     <span>[yingzu@single]$ ls</span>
     <span>best3.new  fort.13  fort.25  mcmc_con.dat</span>
     </pre></div>
-                                            
+
     <br><br>
 
     where "best3.new" contains the best-fit parameters from ameoba, "mcmc_con.dat" is the output from an MCMC chain,
     "fort.13" are the predicted continuum light curve at unmesured time, and "fort.25" records
     accepted MCMC steps before "burn-in" for the test of mixing and convergence. The "unmeasured time" light curve
     simply samples the period covered by the data at 10 times the mean temporal resolution.
-    
+
     <br><br>
-    
+
     From the MCMC output, we can get the prior required for the fitting of lines:
-    
+
     <br><br>
-    
+
     <div class="codehilite"><pre>
     <span>[yingzu@loopdeloop]$ FindCL.pl -s mcmc_con.dat -t stats.dat</span>
     </pre></div>
@@ -301,9 +301,9 @@
     calculation, a "hires.dat" as the predicted light curves from the best fit
     parameters recorded in "best3.txt" found by searching the grid , a "mcmc.dat"
     as the MCMC chain around the peak, and a "stats.dat" as prior input for model
-    parameters in lag determination. 
+    parameters in lag determination.
   </div>
-                                            
+
   <div id="content">
     <h3><a name="twoline">Joint Fitting of Continuum and Line Light Curves</a></h3><br>
 
@@ -344,19 +344,19 @@
     <span>DONE.</span>
     </pre></div>
 
-    <br><br> 
+    <br><br>
 
-    Copy "lc_loopdeloop_con_ha.dat" and enter the "tophat_ha" directory, 
+    Copy "lc_loopdeloop_con_ha.dat" and enter the "tophat_ha" directory,
 
     <div class="codehilite"><pre>
     <span>[yingzu@loopdeloop]$ cd ./tophat_ha/</span>
     </pre></div>
 
-    <br><br> 
+    <br><br>
 
     and try:
 
-    <br><br> 
+    <br><br>
 
     <div class="codehilite"><pre>
     <span>[yingzu@tophat_ha]$ TopWrapper.pl -h</span>
@@ -378,7 +378,7 @@
     <span>example: ./TopWrapper.pl -f lc_loopdeloop_con_ha.dat -v -a -g 0_50_1_0.01_10.01_1</span>
     </pre></div>
 
-    <br><br> 
+    <br><br>
 
     "TopWrapper.pl" does similar things as "SinWrapper.pl". It assumes a TopHat
     transfer function for the BLR and creates a lag-width grid whose geometry can
@@ -389,19 +389,19 @@
     further analysis. For the H-alpha line of Loopdeloop, we have only one solution
     and you can find it by running,
 
-    <br><br> 
+    <br><br>
 
     <div class="codehilite"><pre>
     <span>[yingzu@tophat_ha]$ TopWrapper.pl loopdeloop_con_ha.dat -v -a -g 0_50_1_0.01_10.01_10</span>
     </pre></div>
 
-    <br><br> 
+    <br><br>
 
     The "-g 0_50_1_0.01_10.01_1" indicates the geometry of the 2-d grid
-    (concatenated by "_" to avoid perl parse error), corresponding to 
+    (concatenated by "_" to avoid perl parse error), corresponding to
     "lagmin lagmax lagstep widmin widmax widstep".
 
-    <br><br> 
+    <br><br>
 
     where "lagmin" and "lagmax" give the range of possible lags, which usually
     start from 0 and run to around 2/3 of the length of the light curves, while
@@ -421,13 +421,13 @@
     (rootname is set by using "-r" option), which records the information of all
     the solutions found by the grid calculation, with formats like,
 
-    <br><br> 
+    <br><br>
 
     <div class="codehilite"><pre>
     <span>logL lag width sigma tau scale</span>
     </pre></div>
 
-    <br><br> 
+    <br><br>
 
     where "logL" is the log likelihood value of this solution of "lag" + "width",
     "sigma tau" are the best fit parameters for the model parameters \hat{\sigma}
@@ -441,16 +441,16 @@
     another MCMC around this peak to get the confidence limits on your lag
     estimation,
 
-    <br><br> 
+    <br><br>
 
     <div class="codehilite"><pre>
     <span>[yingzu@tophat_ha]$ vi input.tophat.mcmc</span>
     <span>lc_loopdeloop_con_ha.dat</span>
     <span>1                                        # tophat mode  </span>
-    <span>0.838097 34.480781 15 0.607393 1.001     # directly from "*.peaks.grid"</span> 
-    <span>1 1 1 1 1                                # vary all 5 parameters</span>                              
+    <span>0.838097 34.480781 15 0.607393 1.001     # directly from "*.peaks.grid"</span>
+    <span>1 1 1 1 1                                # vary all 5 parameters</span>
     <span>0 do amoeba                              # no ameoba</span>
-    <span>0 predict light curves                   # no prediction</span>                              
+    <span>0 predict light curves                   # no prediction</span>
     <span>1 do mcmc                                # run MCMC</span>
     <span>mcmc_ha.dat</span>
     <span></span>
@@ -458,12 +458,12 @@
     </pre></div>
 
 
-    <br><br> 
+    <br><br>
 
     Run "FindCL.pl" on the MCMC output "mcmc_ha.dat" ("-c 9" as the 9th column
-    is the lag, please refer to the source code for the column keys), 
+    is the lag, please refer to the source code for the column keys),
 
-    <br><br> 
+    <br><br>
 
     <div class="codehilite"><pre>
     <span>[yingzu@tophat_ha]$ FindCL.pl -m mcmc_ha.dat -c 9</span>
@@ -471,7 +471,7 @@
     <span>CL:     14.400810     13.575960     15.229258</span>
     </pre></div>
 
-    <br><br> 
+    <br><br>
 
     thus the H-alpha lag estimate is 14.4 days, with 1-sigma range [13.57 days - 15.23 days].
   </div>
@@ -500,5 +500,7 @@
 
 
 </div>
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(101016826); }catch(e){}</script>
 </body>
 </html>
